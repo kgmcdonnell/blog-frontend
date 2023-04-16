@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Header() {
   return (
@@ -71,11 +71,12 @@ function Content() {
     });
   };
 
+  useEffect(handleIndexPosts, []);
+
   return (
     <div>
       <PostsNew />
       <PostsIndex posts={posts} />
-      <button onClick={handleIndexPosts}>Load All Posts</button>
     </div>
   );
 }
