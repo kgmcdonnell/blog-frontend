@@ -6,6 +6,8 @@ import { Modal } from "./Modal";
 
 export function Content() {
   const [posts, setPosts] = useState([]);
+  const [isPostsShowVisible, setIsPostsShowVisible] = useState(false);
+  const [currentPost, setCurrentPost] = useState({});
 
   const handleIndexPosts = () => {
     axios.get("http://localhost:3000/posts.json").then(function (response) {
@@ -14,10 +16,9 @@ export function Content() {
     });
   };
 
-  const [isPostsShowVisible, setIsPostsShowVisible] = useState(false);
-
-  const handleShowPost = () => {
+  const handleShowPost = (post) => {
     setIsPostsShowVisible(true);
+    setCurrentPost(post);
   };
 
   const handleClose = () => {
@@ -25,13 +26,14 @@ export function Content() {
   };
 
   useEffect(handleIndexPosts, []);
-
   return (
     <div>
       <PostsNew />
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
-        <p>my boring modal</p>
+        <h3>{currentPost.title}</h3>
+        <img src={currentPost.image} />
+        <p>{currentPost.body}</p>
       </Modal>
     </div>
   );
