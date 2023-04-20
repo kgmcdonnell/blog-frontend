@@ -19,7 +19,9 @@ export function PostsNew() {
           </label>
         </p>
         <p>
-          <button type="submit">Submit</button>
+          <button class="submit" type="submit">
+            Submit
+          </button>
         </p>
       </form>
     </div>

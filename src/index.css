@@ -5,3 +5,23 @@
 html {
   scroll-behavior: smooth;
 }
+
+#root {
+  background: url("./assets/ep_naturalblack.png");
+  color: white;
+}
+
+.box {
+  margin: 5px;
+}
+
+.submit {
+  margin: 5px;
+}
+
+.submit:hover {
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+}
+
