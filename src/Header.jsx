@@ -1,3 +1,5 @@
+import { LogoutLink } from "./LogoutLink";
+
 export function Header() {
   return (
     <header>
@@ -29,6 +31,7 @@ export function Header() {
               <a className="nav-link" style={{ color: "white" }} href="#posts-new">
                 New Post
               </a>
+              <LogoutLink />
             </div>
           </div>
         </div>
