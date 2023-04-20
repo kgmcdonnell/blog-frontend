@@ -19,7 +19,7 @@ export function PostsNew() {
           </label>
         </p>
         <p>
-          <button class="submit" type="submit">
+          <button className="submit" type="submit">
             Submit
           </button>
         </p>
