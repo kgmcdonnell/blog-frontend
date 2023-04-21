@@ -1,14 +1,12 @@
 import axios from "axios";
 
-export function PostsNew() {
+export function PostsNew(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);
-    axios.post("http://localhost:3000/posts", params).then(function (response) {
-      console.log(response);
-      event.target.reset();
-      window.location.href = "/";
-    });
+    props.onCreatePost(params);
+    event.target.reset();
+    window.location.href = "/";
   };
 
   return (
