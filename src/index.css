@@ -1,4 +1,5 @@
-#posts-index img {
+#posts-index img,
+#posts-show img {
   width: 300px;
 }
 
