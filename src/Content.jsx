@@ -50,6 +50,19 @@ export function Content() {
     });
   };
 
+  const handleDestroyPost = (post) => {
+    axios.delete(`http://localhost:3000/posts/${post.id}.json`).then((response) => {
+      console.log(response.data);
+      for (let i = 0; i < posts.length; i++) {
+        if (posts[i].id === post.id) {
+          posts.splice(i, 1);
+        }
+      }
+      setPosts(posts);
+      handleClose();
+    });
+  };
+
   useEffect(handleIndexPosts, []);
   return (
     <div className="container">
@@ -58,7 +71,7 @@ export function Content() {
       <PostsNew onCreatePost={handleCreatePost} />
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
-        <PostsShow post={currentPost} onUpdatePost={handleUpdatePost} />
+        <PostsShow post={currentPost} onUpdatePost={handleUpdatePost} onDeletePost={handleDestroyPost} />
       </Modal>
     </div>
   );
