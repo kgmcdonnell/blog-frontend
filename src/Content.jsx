@@ -35,6 +35,21 @@ export function Content() {
     });
   };
 
+  const handleUpdatePost = (params, id) => {
+    axios.patch(`http://localhost:3000/posts/${id}.json`, params).then((response) => {
+      setCurrentPost(response.data);
+      setPosts(
+        posts.map((post) => {
+          if (post.id === response.data.id) {
+            return response.data;
+          } else {
+            return post;
+          }
+        })
+      );
+    });
+  };
+
   useEffect(handleIndexPosts, []);
   return (
     <div className="container">
@@ -43,7 +58,7 @@ export function Content() {
       <PostsNew onCreatePost={handleCreatePost} />
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
-        <PostsShow post={currentPost} />
+        <PostsShow post={currentPost} onUpdatePost={handleUpdatePost} />
       </Modal>
     </div>
   );
