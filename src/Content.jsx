@@ -1,11 +1,15 @@
+// Libraries
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+// Components
 import { PostsNew } from "./PostsNew";
 import { PostsIndex } from "./PostsIndex";
 import { Modal } from "./Modal";
 import { PostsShow } from "./PostsShow";
 import { Signup } from "./Signup";
 import { Login } from "./Login";
+import { About } from "./About";
 
 export function Content() {
   const [posts, setPosts] = useState([]);
@@ -66,6 +70,9 @@ export function Content() {
   useEffect(handleIndexPosts, []);
   return (
     <div className="container">
+      <Routes>
+        <Route path="/about" element={<About />} />
+      </Routes>
       <Signup />
       <Login />
       <PostsNew onCreatePost={handleCreatePost} />

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { LogoutLink } from "./LogoutLink";
 
 export function Header() {
@@ -32,6 +33,7 @@ export function Header() {
                 New Post
               </a>
               <LogoutLink />
+              <Link to="/about">About</Link>
             </div>
           </div>
         </div>
