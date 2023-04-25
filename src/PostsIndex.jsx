@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 
 export function PostsIndex(props) {
-  console.log(props);
+  console.log("this is my props");
+  console.log(props.posts);
   return (
     <div id="posts-index">
       <h1>All posts</h1>
