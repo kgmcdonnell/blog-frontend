@@ -8,7 +8,7 @@ export function LogoutLink() {
     window.location.href = "/";
   };
   return (
-    <a href="#" onClick={handleClick}>
+    <a className="nav-link" style={{ color: "white" }} href="#" onClick={handleClick}>
       Logout
     </a>
   );

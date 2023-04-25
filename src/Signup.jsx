@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import "./Signup.css";
 
 export function Signup() {
   const [errors, setErrors] = useState([]);
@@ -21,7 +22,7 @@ export function Signup() {
   };
 
   return (
-    <div className="singnup">
+    <div className="signup text-center">
       <h3>Signup</h3>
       <ul>
         {errors.map((error) => (
