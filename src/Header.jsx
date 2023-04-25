@@ -23,17 +23,13 @@ export function Header() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <a className="nav-link active" style={{ color: "white" }} aria-current="page" href="#">
-                Home
-              </a>
-              <a className="nav-link" style={{ color: "white" }} href="#posts-index">
-                All Posts
-              </a>
-              <a className="nav-link" style={{ color: "white" }} href="#posts-new">
-                New Post
-              </a>
-              <LogoutLink />
+              <Link to="/">Home</Link>
+              <Link to="/posts">All Posts</Link>
+              <Link to="/posts/new">New Post</Link>
               <Link to="/about">About</Link>
+              <Link to="/signup">Signup</Link>
+              <Link to="/login">Login</Link>
+              <LogoutLink />
             </div>
           </div>
         </div>

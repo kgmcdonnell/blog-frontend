@@ -10,6 +10,8 @@ html {
 #root {
   background: url("./assets/ep_naturalblack.png");
   color: white;
+  min-height: 100vh;
+  height: 100%;
 }
 
 .box {
