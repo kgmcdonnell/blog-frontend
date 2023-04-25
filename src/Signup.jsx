@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState } from "react";
-import "./Signup.css";
 
 export function Signup() {
   const [errors, setErrors] = useState([]);
