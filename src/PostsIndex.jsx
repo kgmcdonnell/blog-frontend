@@ -10,7 +10,9 @@ export function PostsIndex(props) {
           <h3>{post.title}</h3>
           <img src={post.image} />
           <p>{post.body}</p>
-          <button onClick={() => props.onShowPost(post)}>More Info</button>
+          <button className="btn" style={{ color: "white" }} onClick={() => props.onShowPost(post)}>
+            More Info
+          </button>
           <Link className="btn" style={{ color: "white" }} to={`/posts/${post.id}`}>
             View Post
           </Link>

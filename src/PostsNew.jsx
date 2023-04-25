@@ -10,22 +10,22 @@ export function PostsNew(props) {
   };
 
   return (
-    <div id="posts-new">
+    <div className="text-center" id="posts-new">
       <h1>New post</h1>
       <form onSubmit={handleSubmit}>
         <p>
           <label>
-            Title: <input name="title" type="text" />
+            <input name="title" type="text" placeholder="Title" />
           </label>
         </p>
         <p>
           <label>
-            Body: <input name="body" type="text" />
+            <input name="body" type="text" placeholder="Post Text" />
           </label>
         </p>
         <p>
           <label>
-            Image: <input name="image" type="text" />
+            <input name="image" type="text" placeholder="image url" />
           </label>
         </p>
         <p>
