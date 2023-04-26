@@ -4,6 +4,8 @@ import { useState } from "react";
 export function Signup() {
   const [errors, setErrors] = useState([]);
   const [name, setName] = useState("");
+  // variable for the status of the request
+  const [status, setStatus] = useState(null);
   const handleSubmit = (event) => {
     event.preventDefault();
     setErrors([]);
@@ -18,17 +20,19 @@ export function Signup() {
       .catch(function (error) {
         console.log(error.response.data.errors);
         setErrors(error.response.data.errors);
+        setStatus(error.response.status);
       });
   };
 
   return (
     <div className="signup text-center">
       <h3>Signup</h3>
-      <ul>
-        {errors.map((error) => (
-          <li key={error}>{error}</li>
-        ))}
-      </ul>
+
+      {errors.map((error) => (
+        <p key={error}>{error}</p>
+      ))}
+
+      {status ? <img src={`https://httpstatusdogs.com/img/${status}.jpg`} /> : null}
       <form onSubmit={handleSubmit}>
         <div>
           <input
