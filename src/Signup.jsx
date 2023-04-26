@@ -32,7 +32,10 @@ export function Signup() {
         <p key={error}>{error}</p>
       ))}
 
-      {status ? <img src={`https://httpstatusdogs.com/img/${status}.jpg`} /> : null}
+      {status ? (
+        <img style={{ width: "300px", margin: "10px" }} src={`https://httpstatusdogs.com/img/${status}.jpg`} />
+      ) : null}
+
       <form onSubmit={handleSubmit}>
         <div>
           <input
