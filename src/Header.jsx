@@ -35,13 +35,19 @@ export function Header() {
               <Link className="nav-link" style={{ color: "white" }} to="/about">
                 About
               </Link>
-              <Link className="nav-link" style={{ color: "white" }} to="/signup">
-                Signup
-              </Link>
-              <Link className="nav-link" style={{ color: "white" }} to="/login">
-                Login
-              </Link>
-              <LogoutLink />
+
+              {localStorage.jwt === undefined ? (
+                <>
+                  <Link className="nav-link" style={{ color: "white" }} to="/signup">
+                    Signup
+                  </Link>
+                  <Link className="nav-link" style={{ color: "white" }} to="/login">
+                    Login
+                  </Link>
+                </>
+              ) : (
+                <LogoutLink />
+              )}
             </div>
           </div>
         </div>
